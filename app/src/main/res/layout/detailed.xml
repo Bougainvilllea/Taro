@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<androidx.compose.ui.platform.ComposeView
+    android:id="@+id/compose_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+    <Button
+        android:id="@+id/detailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EB3255"
+        android:fontFamily="@font/bellota"
+        android:textColor="@color/white"
+        android:text="Detailed"
+        android:textSize="20sp"
+        app:cornerRadius="15dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="42sp"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/bellota"
+
+        />
+
+    <TextView
+        android:id="@+id/aboutCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="21sp"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/bellota"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
