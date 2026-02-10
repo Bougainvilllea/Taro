@@ -1,6 +1,7 @@
 package com.example.taro.ui.screens
 
 import android.view.LayoutInflater
+import android.widget.Button
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,6 +21,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import com.example.taro.R
+import android.widget.TextView
+import tarotApiService
 
 @Composable
 fun DetailedScreen(navController: NavHostController) {
@@ -95,8 +98,24 @@ fun DetailedScreen(navController: NavHostController) {
         factory = { context ->
             LayoutInflater.from(context).inflate(R.layout.detailed, null, false)
         },
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
+        update = { view ->
+            val detailButton = view.findViewById<Button>(R.id.detailButton)
+            val nameCard = view.findViewById<TextView>(R.id.nameCard)
+            val aboutCard = view.findViewById<TextView>(R.id.aboutCard)
+
+            detailButton.setOnClickListener {
+                navController.navigate("reteling")
+            }
+
+
+
+        }
+
+
     )
+
+
 
     }
 

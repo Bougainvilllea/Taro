@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.taro.ui.screens.DetailedScreen
 import com.example.taro.ui.screens.HomeScreen
+import com.example.taro.ui.screens.RetelingScreen
 
 @Composable
 fun Navigation(){
@@ -18,9 +19,9 @@ fun Navigation(){
     }
 
 
-//    composable("reteling") {
-//        RetelingScreen(navController = navController)
-//    }
+    composable("reteling") {
+        RetelingScreen(navController = navController)
+    }
 
     composable("detailed") {
         DetailedScreen(navController = navController)
