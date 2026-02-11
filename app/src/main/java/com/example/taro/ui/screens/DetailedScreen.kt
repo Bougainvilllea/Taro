@@ -22,10 +22,15 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import com.example.taro.R
 import android.widget.TextView
+import androidx.compose.runtime.rememberCoroutineScope
+import com.example.taro.TaroSource
+import kotlinx.coroutines.launch
 import tarotApiService
 
 @Composable
 fun DetailedScreen(navController: NavHostController) {
+
+    val scope = rememberCoroutineScope()
 
     Column(modifier = Modifier.fillMaxSize()) {
 
@@ -108,9 +113,15 @@ fun DetailedScreen(navController: NavHostController) {
                 navController.navigate("reteling")
             }
 
+            scope.launch{
+                nameCard.text = TaroSource.taroResponse?.cards[0]?.name
+                aboutCard.text = TaroSource.taroResponse?.cards[0]?.meaningUp
 
+
+            }
 
         }
+
 
 
     )

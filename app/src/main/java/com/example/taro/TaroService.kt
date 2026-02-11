@@ -9,6 +9,7 @@ import retrofit2.http.Query
 interface TarotApiService  {
     @GET("cards/random")
     suspend fun getRandomCards(@Query("n") count: Int = 1): Taro
+
 }
 
 var retrofit = Retrofit.Builder()

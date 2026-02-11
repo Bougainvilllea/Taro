@@ -1,5 +1,8 @@
 package com.example.taro.ui.screens
 
+import android.view.LayoutInflater
+import android.widget.Button
+import android.widget.TextView
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,11 +20,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import com.example.taro.R
+import kotlinx.coroutines.launch
+import androidx.compose.runtime.rememberCoroutineScope
+import com.example.taro.TaroSource
+import tarotApiService
 
 @Composable
 fun RetelingScreen(navController: NavHostController){
+
+    val scope = rememberCoroutineScope()
+
     Column(modifier = Modifier.fillMaxSize()) {
 
         Box(
@@ -46,4 +57,23 @@ fun RetelingScreen(navController: NavHostController){
                 .align(Alignment.BottomCenter),
             contentScale = ContentScale.FillWidth)
     }
+
+    AndroidView(
+        factory = { context ->
+            LayoutInflater.from(context).inflate(R.layout.retelling, null, false)
+        },
+        modifier = Modifier.fillMaxSize(),
+        update = { view ->
+            val retelling = view.findViewById<TextView>(R.id.retelling)
+
+            retelling.text = TaroSource.taroResponse?.cards[0]?.desс
+
+
+
+
+            }
+
+
+    )
+
 }
