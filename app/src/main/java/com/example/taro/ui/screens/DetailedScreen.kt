@@ -22,6 +22,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import com.example.taro.R
 import android.widget.TextView
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.runtime.rememberCoroutineScope
 import com.example.taro.TaroSource
 import kotlinx.coroutines.launch
@@ -116,15 +118,17 @@ fun DetailedScreen(navController: NavHostController) {
             scope.launch{
                 nameCard.text = TaroSource.taroResponse?.cards[0]?.name
                 aboutCard.text = TaroSource.taroResponse?.cards[0]?.meaningUp
-
-
             }
-
         }
-
-
-
     )
+
+    IconButton(onClick = { navController.popBackStack() },
+        modifier = Modifier.padding(start = 20.dp)) {
+        Icon(painter = painterResource(id = R.drawable.arrow_orange),
+            contentDescription = "Назад",
+            tint = Color.Unspecified)
+
+    }
 
 
 
