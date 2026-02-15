@@ -3,8 +3,8 @@ package com.example.taro
 import com.google.gson.annotations.SerializedName
 
 data class Taro(
-    @SerializedName("card")
-    val card: taroCard
+    @SerializedName("cards")
+    val cards: List<taroCard>
 
 )
 

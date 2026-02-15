@@ -100,7 +100,7 @@ fun HomeScreen(navController: NavHostController) {
     Button(onClick = {
         navController.navigate("detailed")
     },
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(3.dp),
         modifier = Modifier
             .padding(top = 650.dp)
             .fillMaxWidth()
